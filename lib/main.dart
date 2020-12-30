@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// form kullanımında validation çok önemlidir.
+// bu uygulama Form ve Validation işlemlerini içermektedir.
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -62,6 +65,19 @@ class MyCustomFormState extends State<MyCustomForm> {
             validator: (value) {
               if (value.isEmpty) {
                 return 'Please enter valid phone number';
+              }
+              return null;
+            },
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+              icon: const Icon(Icons.calendar_today),
+              hintText: 'Enter your date of birth',
+              labelText: 'Dob',
+            ),
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter valid date';
               }
               return null;
             },
